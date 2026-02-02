@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     font-family: Lato;
     background-color: #6b1010;
 }
@@ -17,6 +17,40 @@ header {
 
 main {
     justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    box-sizing: border-box;
+
+    color: white;
+
+    padding-bottom: 300px;
+}
+
+.text {
+    align-self: start;
+    padding: 100px 100px;
+}
+
+main img{
+    height: 600px;
+    padding: 20px;
+}
+
+.textbox {
+    height: 100px;
+    width: 300px;
+
+    color: black;
+
+    background-color: white;
+    padding: 5px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,255);
+}
+
+.offset {
+    transform: translateY(200px);
 }
 
 footer {

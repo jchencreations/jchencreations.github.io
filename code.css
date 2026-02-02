@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Lato;
-    background-color: #b2b2b2;
+    background-color: #cccccc;
 }
 
 html, body {
@@ -17,6 +17,35 @@ header {
 
 main {
     justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    box-sizing: border-box;
+
+    padding-bottom: 300px;
+}
+
+.text {
+    align-self: start;
+    padding: 100px 100px;
+}
+
+main img {
+    height: 600px;
+    padding: 20px;
+}
+
+.textbox {
+    height: 100px;
+    width: 300px;
+    background-color: white;
+    padding: 5px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,255);
+}
+
+.offset {
+    transform: translateY(200px);
 }
 
 footer {
@@ -29,8 +58,8 @@ footer {
     margin: auto 0;
 }
 
-    footer img {
-        justify-self: center;
-        height: 60px;
-        margin: 0 auto;
-    }
+footer img {
+    justify-self: center;
+    height: 60px;
+    margin: 0 auto;
+}
