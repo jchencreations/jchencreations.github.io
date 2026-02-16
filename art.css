@@ -25,6 +25,7 @@ main {
     color: white;
 
     padding-bottom: 300px;
+    margin: 50px;
 }
 
 .text {
@@ -38,7 +39,7 @@ main img{
 }
 
 .textbox {
-    height: 100px;
+    height: 120px;
     width: 300px;
 
     color: black;
