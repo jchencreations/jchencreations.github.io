@@ -32,10 +32,14 @@ main {
 }
 
 main img {
-    height: 600px;
+    height: 50vh;
     padding: 20px;
 }
 
+.iframe {
+    height: 50vh;
+    width: 90vh;
+}
 .textbox {
     height: 100px;
     width: 300px;
