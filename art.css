@@ -13,6 +13,7 @@ html, body {
 
 header {
     justify-self: center;
+    margin: auto;
     color: white;
 }
 
@@ -26,7 +27,7 @@ header {
         box-sizing: border-box;
         color: white;
         padding-bottom: 300px;
-        margin: 0.5vw;
+        margin: 1vw;
     }
     .offset {
         transform: translateY(200px);

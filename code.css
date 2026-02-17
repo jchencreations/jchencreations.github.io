@@ -14,6 +14,7 @@ html, body {
 
 header {
     justify-self: center;
+    margin: auto;
 }
 
 /*Desktop Version*/
@@ -51,7 +52,7 @@ header {
         grid-template-columns: 1fr;
         align-items: center;
         box-sizing: border-box;
-        color: white;
+        color: black;
         padding-bottom: 300px;
         margin: 1vw;
     }
