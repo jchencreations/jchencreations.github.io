@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blender 2D-to-3D Integration Tool</title>
+
+    <link rel="stylesheet" href="../code.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+</head>
+<body>
+    <main>
+        <div class="text">
+            <h1>Blender 2D-to-3D Integration Tool</h1>
+
+            <p>
+                Tools: Blender, Python
+            </p>
+
+            <p>
+                Description: Developed a custom Blender tool to bridge the gap between 3D environments and hand-drawn 2D aesthetics. 
+                The tool automates the setup of a dynamic canvas that follows 3D targets while maintaining a constant orientation toward the camera, streamlining the workflow used in films like Spider-Man: Into the Spider-Verse.
+            </p>
+
+            <p>
+                The development focused on removing the friction of manual compositing 2D effects, replacing the use of Grease Pencil, which only allows 2D line strokes within Blender.
+                We scripted a solution that instantiates a 2D drawing canvas at a target object’s origin, applies a COPY_LOCATION constraint for movement synchronization, and implements a TRACK_TO constraint to ensure the 2D effect remains visible to the camera regardless of perspective shifts.
+                We also built a custom N-Panel UI which allowed users to easily use our tool by setting start and end frames, looping properties, and their animation.
+                We met an issue of how to import GIFs (which support transparency) into Blender, and our current solution is to split it into an image sequence before importing.
+                In the future, we plan to have the script automatically split animations for an even faster process.
+                We aim to expand the tool to support automated depth-sorting (preventing 2D elements from clipping through 3D geometry) and a preset library for common 2D effects like speed lines and impact frames.
+            </p>
+
+            <p>
+                Credits: Jason Chen, Maci Boone, CGARP (Computer Graphics & Animation Research Projects)
+            </p>
+
+            <p>
+                Github:
+                <a href="https://github.com/jchencreations/Blender-2D-to-3D-Tool" target="_blank" rel="noopener">
+                    github.com
+                </a>
+            </p>
+        </div>
+
+        <div>
+            <iframe class="iframe" width="1067" height="600" src="https://www.youtube.com/embed/caQsj0aczeE?si=AMLtjr1zgHFpmhko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img src="../assets/2d/render.png" />
+            <img src="../assets/2d/track.png" />
+            <img src="../assets/2d/UI.png" />
+        </div>
+    </main>
+    <footer>
+        <a href="../code.html" target="_self" rel="noopener">
+            <img src="../assets/ChenIconBlack.png" />
+        </a>
+    </footer>
+</body>
+</html>
