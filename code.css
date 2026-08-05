@@ -34,13 +34,18 @@ header {
         transform: translateY(200px);
     }
     main img {
-        height: 40vh;
+        width: 40vw;
         padding: 20px;
     }
 
     .iframe {
         height: 50vh;
         width: 40vw;
+    }
+
+    embed {
+        height: 110vh;
+        width:40vw;
     }
 }
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VR Haptics Platform for Rapid Prototyping</title>
+
+    <link rel="stylesheet" href="../code.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+</head>
+<body>
+    <main>
+        <div class="text">
+            <h1>VR Haptics Platform for Rapid Prototyping</h1>
+
+            <p>
+                Software: Unity (C#), Meta VR/XR Interaction SDK, Rhino/Grasshopper (C#), Node.js (JS)
+                <br>
+                Hardware: Meta Quest 3, Nova Senseglove 2
+            </p>
+
+            <p>
+                Description: Research project to develop an immersive virtual reality platform for lattice‑structured products
+                for additive manufacturing that allows users to rapidly prototype products while able to receive visual and haptic
+                feedback.
+            </p>
+
+            <p>
+                Overview: This research project proposes to develop an immersive platform specifically through
+                a pipeline between Rhino Grasshopper and Unity for lattice‑structured products that
+                unifies the following capabilities:
+                
+            </p>
+            <list>
+                <li>
+                    Live Parameter Tuning – Design variables (e.g., cell size, topology, relative
+                    density, material distribution) are manipulated through a simple user interface
+                    (UI). The system instantly updates the printable model and haptic feedback.
+                </li>
+                
+                <li>
+                    Physical Hardness Perception: By coupling lattice specimens with calibrated
+                    haptic devices, users can directly sense variations in local stiffness, enabling
+                    intuitive assessment of comfort and load‑bearing characteristics .
+                </li>
+                
+                <li>
+                    Comprehensive Visualisation – High‑fidelity viewing of lattice geometry, both
+                    internal and external, with realistic material rendering, provides an accurate
+                    visual reference.
+                </li>
+
+                <li>
+                    Cross Section Inspection – Users can “slice” through the lattice in VR to
+                    examine internal strut architecture without physical sectioning.
+                    With these features, product engineers will be able to interact with their products in
+                    an immersive environment, with methods that can replace real life printing, hardness
+                    testing, slicing for cross section.
+                </li>
+            </list>
+
+            <p>
+                Main Innovations: Initially, the Unity Asset Transformer Toolkit (formerly known as Pixyz) was used to
+                import complex models. One advantage of the toolkit was that it was able to
+                decimate and optimize complex models. But, it was quickly determined that
+                decimating or reducing the model complexity took significantly more time than
+                necessary for the fast iteration that the platform required. It was found that
+                this method of importing was not realistic for real time loading, especially
+                coupled with Grasshopper’s computation time of up to several minutes. Normally,
+                STL files are the easiest way to export Grasshopper models. However, they are very
+                complex, large in file size, and often corrupted, since they brute force storing millions
+                of repeated triangle vertices. Thus, it was necessary to convert the model to FBX or
+                GLTF binary for fasted loading, but took additional time within Grasshopper for
+                conversion.
+
+                Thus, building upon research of Junichiro Horikawa’s Grasshopper to Unity pipeline,
+                a pipeline using several C# scripts and a Node.js server was made for a
+                communication loop of data transfer between Unity and Grasshopper, which will be
+                discussed in the next section. This allowed mesh loading to be practically
+                instantaneous, which was infinitely better than all other methods previously tried such
+                as Unity’s toolkit. This meant that Grasshopper was the only bottleneck in the whole
+                platform.
+            </p>
+
+            <p>
+                Platform Design: The main design process needed was for the data pipeline, and the platform’s
+                interaction. To transport data, the system implements a bidirectional data loop
+                between Unity and Grasshopper to enable interactive parametric modeling. User
+                interactions in Unity, such as modifying lattice size parameters, trigger a script that
+                writes the new numbers to a JSON file, causing the parametric definition to be
+                recomputed in Grasshopper after another script reads the JSON file. The updated
+                geometry is then converted into a triangulated mesh, serialized into a compact binary
+                format containing vertex and triangle data, and written to disk. Unity continuously
+                monitors this output using a server, and upon any changes, it deserializes the mesh,
+                and replaces the existing geometry in the VR scene with the updated model. This
+                workflow allows complex Grasshopper definitions to be integrated into an immersive
+                design environment while maintaining responsive visualization. A flowchart
+                describing the process is to the right.
+            </p>
+
+            <p>
+                Credits: Jason Chen, supervised by Henrik Kruse (DAP RWTH Aachen)
+
+            </p>
+
+            <p>
+                Github:
+                <a href="https://github.com/jchencreations/RWTH-DAP-VR-Haptics-Platform-for-AM" target="_blank" rel="noopener">
+                    VR Github
+                </a>
+            </p>
+        </div>
+
+        <div>
+            <img src="../assets/sandal/screenshot.png" />
+            <img src="../assets/sandal/flowchart.png" />
+            <img src="../assets/sandal/unitybefore.png" />
+            <p>
+                Before adjusting parameters of a sandal in scene
+            </p>
+            <img src="../assets/sandal/unityafter.png" />
+            <p>
+                After adjusting parameters: shrinking lattice cell radius of the ball and heel of the foot, and shifting the middle lattice forward
+            </p>
+            <embed src="../assets/sandal/poster.pdf" type="application/pdf">
+
+        </div>
+    </main>
+    <footer>
+        <a href="../code.html" target="_self" rel="noopener">
+            <img src="../assets/ChenIconBlack.png" />
+        </a>
+    </footer>
+</body>
+</html>
